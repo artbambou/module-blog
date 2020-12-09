@@ -73,7 +73,12 @@
                         <button type="submit"><?= $block->escapeHtml(__('Submit')) ?></button>
                     <?php } else { ?>
                         <button type="button"
-                                onclick="window.location='<?= $block->escapeUrl($block->getCustomerUrl()->getLoginUrl()) ?>';">
+                                data-mage-init='{
+			                		"redirectUrl": {
+			                			"event": "click",
+			                			"url": "<?= $block->escapeUrl($block->getCustomerUrl()->getLoginUrl()) ?>"
+			                		}
+			                	}'>
                             <?= $block->escapeHtml(__('Sign In')) ?>
                         </button>
                     <?php } ?>
@@ -156,7 +161,12 @@ if ($commentsCount) {
                         <?= $block->getChildBlock('display_privacy_policy_checkbox')->setCommentType('comment')->toHtml(); ?>
                     <?php } ?>
                     <button type="button"
-                            onclick="window.location='<?= $block->escapeUrl($block->getCustomerUrl()->getLoginUrl()) ?>';">
+                            data-mage-init='{
+			            		"redirectUrl": {
+			            			"event": "click",
+			            			"url": "<?= $block->escapeUrl($block->getCustomerUrl()->getLoginUrl()) ?>"
+			            		}
+			            	}'>
                         <?= $block->escapeHtml(__('Sign In')) ?>
                     </button>
                 <?php } ?>
